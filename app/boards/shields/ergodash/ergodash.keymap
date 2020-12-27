@@ -1,0 +1,95 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
+
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+/* Colemak
+ * .----------------------------------------------------------------------------------------------------------------------.
+ * |  `   |   1  |   2  |   3  |   4  |   5  |  [   |                    |  ]   |   6  |   7  |   8  |   9  |   0  | PScr |
+ * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
+ * | ESC  |   Q  |   W  |   F  |   P  |   G  |  -   |                    |  =   |   J  |   L  |   U  |   Y  |   ;  |  \   |
+ * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
+ * | Tab  |   A  |   R  |   S  |   T  |   D  | Del  |                    | Bksp |   H  |   N  |   E  |   I  |   O  |  '   |
+ * |------+------+------+------+------+------+---------------------------+------+------+------+------+------+------+------|
+ * | Shift|   Z  |   X  |   C  |   V  |   B  | End  |                    | Home |   K  |   M  |   ,  |   .  |   /  | Shift|
+ * |-------------+------+------+------+------+------+------+------+------+------+------+------+------+------+-------------|
+ * | Ctrl |  Bat | PGDN | Win  |||||||| Alt  | Space| Lower|||||||| Raise| Enter| RAlt ||||||||      | PGUP | Ins  | RCtrl|
+ * .----------------------------------------------------------------------------------------------------------------------.
+ */
+                        bindings = <
+&kp  GRAVE    &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5       &kp  LBKT              &kp  RBKT     &kp  N6       &kp  N7       &kp  N8       &kp  N9       &kp  N0       &kp  PRSC
+&kp  ESC      &kp  Q        &kp  W        &kp  F        &kp  P        &kp  G        &kp  MINUS             &kp  EQUAL    &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI     &kp  BSLH
+&kp  TAB      &kp  A        &kp  R        &kp  S        &kp  T        &kp  D        &kp  DEL               &kp  BSPC     &kp  H        &kp  N        &kp  E        &kp  I        &kp  O        &kp  SQT
+&kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  END               &kp  HOME     &kp  K        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  RSHFT
+&kp  LCTRL    /**/ &none    &kp  PG_DN    &kp  LMETA    &kp  LALT     &kp  SPACE    &mo  LOWER             &mo  RAISE    &kp  RET      &kp  RALT     /**/ &none    &kp  PG_UP    &kp  INS      &kp  RCTRL
+                        >;
+                };
+                lower_layer {
+/* .----------------------------------------------------------------------------------------------------------------------.
+ * |  F11 |  F1  |  F2  |  F3  |  F4  |  F5  |      |                    |      |  F6  |  F7  |  F8  |  F9  |  F10 |  F12 |
+ * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+---------------------------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
+ * |-------------+------+------+------+------+------+------+------+------+------+------+------+------+------+-------------|
+ * | REST | BOOT |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      |
+ * .----------------------------------------------------------------------------------------------------------------------.
+ */
+                        bindings = <
+&kp  F11      &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5       &kp  &none             &kp  &none    &kp  F6       &kp  F7       &kp  F8       &kp  F9       &kp  F10      &kp  F12
+/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none
+/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none
+/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none
+&reset        &bootloader   /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none
+                        >;
+                };
+                raise_layer {
+/* .----------------------------------------------------------------------------------------------------------------------.
+ * |      |      |      |      |      |      |      |                    |      | Stop | Vol+ | Mute |      |      |      |
+ * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |                    |      | Prev | PlPa | Next |      |      |      |
+ * |------+------+------+------+------+------+------+--------------------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |                    |      | MMut | Vol- |  Up  |      |      |      |
+ * |------+------+------+------+------+------+---------------------------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |                    |      |      |      |      |      |      |      |
+ * |-------------+------+------+------+------+------+------+------+------+------+------+------+------+------+-------------|
+ * |      |      |      |      |      |      |      |      |      |      |      |      |      |      |      | BOOT | REST |
+ * .----------------------------------------------------------------------------------------------------------------------.
+ */
+// The keycode is 248 + 8 = 256, outside of what X can deal with. for Wayland has 32bits so all this should work fine there.
+// As for the mutter commit: this is the opposite of what we need. Previously,
+// gnome would assume that both XF86AudioMicMute and F20 trigger the
+// microphone. With that commit, only the former does so which means you could
+// configure your XKB layout to have anything send XF86AudioMicMute. The latter
+// would now just be interpreted as F20.
+// But the pen itself sends keycode 190 (KEY_F20) and because of historical
+// reasons that is mapped to micmute in XKB. So we do get the XF86AudioMicMute
+// symbol, GNOME mutes the microphone, etc.
+                        bindings = <
+/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    &kp  C_STOP   &kp  C_VOL_UP &kp  K_MUTE   /**/ &none    /**/ &none    /**/ &none
+/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    &kp  C_NEXT   &kp  K_PP     &kp  C_PREV   /**/ &none    /**/ &none    /**/ &none
+/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    &kp  F20      &kp  C_VOL_DN &kp  UP       /**/ &none    /**/ &none    /**/ &none
+/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    /**/ &none    &kp  LEFT     &kp  DOWN     &kp  RIGHT    /**/ &none    /**/ &none
+/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    &bootloader   &reset
+                        >;
+                };
+        };
+};
+

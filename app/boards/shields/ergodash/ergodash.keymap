@@ -36,7 +36,7 @@
 &kp  ESC      &kp  Q        &kp  W        &kp  F        &kp  P        &kp  G        &kp  MINUS             &kp  EQUAL    &kp  J        &kp  L        &kp  U        &kp  Y        &kp  SEMI     &kp  BSLH
 &kp  TAB      &kp  A        &kp  R        &kp  S        &kp  T        &kp  D        &kp  DEL               &kp  BSPC     &kp  H        &kp  N        &kp  E        &kp  I        &kp  O        &kp  SQT
 &kp  LSHFT    &kp  Z        &kp  X        &kp  C        &kp  V        &kp  B        &kp  END               &kp  HOME     &kp  K        &kp  M        &kp  COMMA    &kp  DOT      &kp  SLASH    &kp  RSHFT
-&kp  LCTRL    /**/ &none    &kp  PG_DN    &kp  LMETA    &kp  LALT     &kp  SPACE    &mo  LOWER             &mo  RAISE    &kp  RET      &kp  RALT     /**/ &none    &kp  PG_UP    &kp  INS      &kp  RCTRL
+&kp  LCTRL    &none         &kp  PG_DN    &kp  LMETA    &kp  LALT     &kp  SPACE    &mo  LOWER             &mo  RAISE    &kp  RET      &kp  RALT     &none         &kp  PG_UP    &kp  INS      &kp  RCTRL
                         >;
                 };
                 lower_layer {
@@ -54,10 +54,10 @@
  */
                         bindings = <
 &kp  F11      &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5       &kp  &none             &kp  &none    &kp  F6       &kp  F7       &kp  F8       &kp  F9       &kp  F10      &kp  F12
-/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none
-/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none
-/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none
-&reset        &bootloader   /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none
+&none         &none         &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none         &none
+&none         &none         &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none         &none
+&none         &none         &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none         &none
+&reset        &bootloader   &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none         &none
                         >;
                 };
                 raise_layer {
@@ -83,11 +83,11 @@
 // reasons that is mapped to micmute in XKB. So we do get the XF86AudioMicMute
 // symbol, GNOME mutes the microphone, etc.
                         bindings = <
-/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    &kp  C_STOP   &kp  C_VOL_UP &kp  K_MUTE   /**/ &none    /**/ &none    /**/ &none
-/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    &kp  C_NEXT   &kp  K_PP     &kp  C_PREV   /**/ &none    /**/ &none    /**/ &none
-/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    &kp  F20      &kp  C_VOL_DN &kp  UP       /**/ &none    /**/ &none    /**/ &none
-/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    /**/ &none    &kp  LEFT     &kp  DOWN     &kp  RIGHT    /**/ &none    /**/ &none
-/**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none             /**/ &none    /**/ &none    /**/ &none    /**/ &none    /**/ &none    &bootloader   &reset
+&none         &none         &none         &none         &none         &none         &none                  &none         &kp  C_STOP   &kp  C_VOL_UP &kp  K_MUTE   &none         &none         &none
+&none         &none         &none         &none         &none         &none         &none                  &none         &kp  C_NEXT   &kp  K_PP     &kp  C_PREV   &none         &none         &none
+&none         &none         &none         &none         &none         &none         &none                  &none         &kp  F20      &kp  C_VOL_DN &kp  UP       &none         &none         &none
+&none         &none         &none         &none         &none         &none         &none                  &none         &none         &kp  LEFT     &kp  DOWN     &kp  RIGHT    &none         &none
+&none         &none         &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &bootloader   &reset
                         >;
                 };
         };

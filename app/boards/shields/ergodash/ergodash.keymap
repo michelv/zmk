@@ -31,11 +31,11 @@
  * .----------------------------------------------------------------------------------------------------------------------.
  */
                         bindings = <
-&kp  ESC      &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5       &kp  LBKT              &kp  RBKT     &kp  N6       &kp  N7       &kp  N8       &kp  N9       &kp  N0       &kp  EQUAL
-&kp  TAB      &kp  SQT      &kp  COMMA    &kp  DOT      &kp  P        &kp  Y        &kp  BSPC              &kp  BSPC     &kp  F        &kp  G        &kp  C        &kp  R        &kp  L        &kp  BSLH
-&mo  LOWER    &kp  A        &kp  O        &kp  E        &kp  U        &kp  I        &kp  RET               &kp  RET      &kp  D        &kp  H        &kp  T        &kp  N        &kp  S        &kp  FSLH
-&kp  LSHFT    &kp  SEMI     &kp  Q        &kp  J        &kp  K        &kp  X        &kp  SPACE             &kp  SPACE    &kp  B        &kp  M        &kp  W        &kp  V        &kp  Z        &kp  RSHFT
-&kp  LCTRL    &kp  GRAVE    &kp  MINUS    &kp  LALT     &kp  LMETA    &kp  SPACE    &kp  SPACE             &kp  SPACE    &kp  SPACE    &kp  RMETA    &kp  LEFT     &kp  UP       &kp  DOWN     &kp  RIGHT
+&none &none &none &none &none &none &none &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none &none &none &none &none &none &none &none
+&mo  LOWER    &none &none &none &none &none &none &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none &none &none &none &none &none &none &none
                         >;
                 };
                 lower_layer {
@@ -52,8 +52,8 @@
  * .----------------------------------------------------------------------------------------------------------------------.
  */
                         bindings = <
-&none         &kp  F1       &kp  F2       &kp  F3       &kp  F4       &kp  F5       &none                  &none         &kp  F6       &kp  F7       &kp  F8       &kp  F9       &kp  F10      &kp  PSCR
-&none         &kp  F11      &kp  F12      &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none         &none
+&none         &none &none &none &none &none &none &none &none &none &none &none &none         &none
+&none         &none &none &none &none         &none &none &none &none         &none &none &none &none &none
 &none         &none         &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none         &none
 &none         &none         &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none         &none
 &reset        &bootloader   &none         &none         &none         &none         &none                  &none         &none         &none         &none         &none         &none         &none

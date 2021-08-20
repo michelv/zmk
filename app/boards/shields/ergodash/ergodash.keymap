@@ -32,7 +32,7 @@
  */
                         bindings = <
 &kp  ESC      &kp  N1       &kp  N2       &kp  N3       &kp  N4       &kp  N5       &kp  LBKT              &kp  RBKT     &kp  N6       &kp  N7       &kp  N8       &kp  N9       &kp  N0       &kp  EQUAL
-&none &none &none &none &none &none &none &none &none &none &none &none &none &none
+&kp  TAB      &kp  SQT      &kp  COMMA    &kp  DOT      &kp  P        &kp  Y        &kp  BSPC              &kp  BSPC     &kp  F        &kp  G        &kp  C        &kp  R        &kp  L        &kp  BSLH
 &mo  LOWER    &none &none &none &none &none &none &none &none &none &none &none &none &none
 &none &none &none &none &none &none &none &none &none &none &none &none &none &none
 &none &none &none &none &none &none &none &none &none &none &none &none &none &none
